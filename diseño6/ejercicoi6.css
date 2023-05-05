@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    color: white;
+}
+
+body {
+    height: 100vh;
+    background: #03071e;
+}
+
+.caja-all {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.caja-score {
+    top: 20px;
+    position: relative;
+    border: 1px solid;
+    border-radius: 30px;
+    width: 40%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    top: -20px;
+    left: -50px;
+    position: relative;
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.score {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 40px;
+}
+
+.score section {
+    position: relative;
+    left: 30px;
+    width: 150px;
+    height: 100px;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+section>p {
+    color: rgb(24, 24, 24);
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+section>span {
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(24, 24, 24);
+}
+
+.caja-juego {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.juego {
+    top: 80px;
+    position: relative;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 50px;
+}
+
+.piedra,
+.papel,
+.tijera {
+    position: relative;
+    width: 11%;
+    height: 35%;
+    border: 15px solid;
+    background: transparent;
+    border-radius: 100%;
+    background-color: white;
+}
+
+.papel {
+    top: -150px;
+    border-color: blue;
+    transition: all .4s ease-in-out;
+}
+
+.piedra {
+    border-color: red;
+    transition: all .4s ease-in-out;
+}
+
+.tijera {
+    border-color: green;
+    transition: all .4s ease-in-out;
+}
+
+.papel:hover {
+    box-shadow: 0px 0px 30px 1px rgba(0, 0, 255);
+}
+
+.piedra:hover {
+    box-shadow: 0px 0px 30px 1px rgba(255, 0, 0);
+}
+
+.tijera:hover {
+    box-shadow: 0px 0px 30px 1px rgba(0, 255, 0);
+}
+
+.papel:focus {
+    box-shadow: inset 0px 0px 30px 1px rgba(0, 0, 255);
+}
+
+.piedra:focus {
+    box-shadow: inset 0px 0px 30px 1px rgba(255, 0, 0);
+}
+
+.tijera:focus {
+    box-shadow: inset 0px 0px 30px 1px rgba(0, 255, 0);
+}
+
+.caja-boton {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 95%;
+    height: 100px;
+}
+
+.caja-boton button {
+    position: relative;
+    padding: 10px 60px;
+    color: rgb(255, 255, 255);
+    background: transparent;
+    border: 2px solid white;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: all .4s ease-in-out;
+}
+
+.caja-boton button:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0px 0px 20px rgb(255, 255, 255);
+}
+
+.caja-boton button:focus {
+    background-color: white;
+    color: black;
+    box-shadow: inset 0px 0px 20px 0px rgb(0, 0, 0);
+}
+
+.caja-resultado {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #03071e;
+    position: absolute;
+    top: 0;
+    left: -2000px;
+    gap: 30px;
+    transition: all .1s ease-in-out;
+}
+
+.caja-resultado p{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.caja-resultado button {
+    padding: 10px 25px;
+    color: black;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+    transition: .4s all ease-in-out;
+}
+
+.caja-resultado button:hover{
+    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+}
+.caja-resultado button:focus{
+    box-shadow: inset 0px 0px 10px rgb(0, 0, 0);
+}
+
+.caja-jugador,
+.caja-maquina {
+    width: 200px;
+    height: 200px;
+    border: 30px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+#result-piedra,
+#result-papel,
+#result-tijera,
+#result-piedra2,
+#result-papel2,
+#result-tijera2 {
+    position: relative;
+    left: 25px;
+    top: 30px;
+    width: 0;
+    height: 0;
+    fill: #03071e;
+}
+
+.caja-reglas{
+    
+    top: 100px;
+    left: 390px;
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    
+}
+
+.caja-opaco{
+    transition: all .4s ease-in-out;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0,.5);
+    left: -2000px;
+    top: 0;
+}
+
+.caja-reglas h1{
+    color: black;
+    position: absolute;
+    width: 80%;
+    top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.caja-reglas button{
+    color: black;
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    font-weight: 500;
+}
+.caja-reglas button:hover{
+    color: rgb(255, 0, 0);
+}
+
+.caja-reglas svg{
+    position: relative;
+    top: 100px;
+}
+
+.titulo-result{
+    top:100px;
+    position: absolute;
+    color: white;
+    font-size: 50px;
+    width: 51%;
+    display: flex;
+    justify-content: space-between;
+}
